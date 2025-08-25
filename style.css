@@ -901,6 +901,8 @@ section h2:after {
 .project-image, .project-image-dual {
     width: auto;
     object-fit: contain;
+    justify-content: center;
+    align-items: center;
     border-radius: var(--radius-lg);
     box-shadow: var(--shadow-md);
     background-color: var(--color-secondary);
