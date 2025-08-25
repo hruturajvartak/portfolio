@@ -5,19 +5,23 @@ body {
   margin: 0;
   padding: 0;
 }
-.profile-card {
-  text-align: center;
+.profile-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 46px;
+  margin-bottom: 36px;
   background: #fff;
   border-radius: 18px;
   box-shadow: 0 2px 12px #e0e4ea;
-  padding: 40px 28px 32px 28px;
-  margin: 44px auto 32px auto;
+  padding: 38px 28px 32px 28px;
   max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
   border-top: 4px solid #2978b5;
 }
+
 .profile-pic {
-  display: block;
-  margin: 32px auto 24px auto;
   width: 170px;
   height: 170px;
   object-fit: cover;
@@ -25,27 +29,37 @@ body {
   background: #fff;
   border: 5px solid #2978b5;
   box-shadow: 0 6px 24px rgba(41,120,181,0.13), 0 1px 5px #dde6ef;
+  margin-bottom: 1.5em;
 }
+
+.profile-details {
+  text-align: center;
+}
+
 .name {
-  font-size: 2.4em;
+  font-size: 2.2em;
   font-weight: 700;
   color: #2978b5;
   margin-bottom: 0.4em;
 }
+
 .title {
   font-size: 1.35em;
   font-weight: 600;
   color: #303030;
   margin-bottom: 0.2em;
 }
+
 .subtitle {
   font-size: 1.1em;
   color: #666;
   margin-bottom: 1.2em;
 }
+
 .contact-links {
   margin-bottom: 1em;
 }
+
 .contact-links a {
   color: #2978b5;
   text-decoration: underline;
