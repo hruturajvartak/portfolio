@@ -899,9 +899,8 @@ section h2:after {
 }
 
 .project-image, .project-image-dual {
-    width: 100%;
-    aspect-ratio: 16 / 9;
-    object-fit: cover;
+    width: auto;
+    object-fit: contain;
     border-radius: var(--radius-lg);
     box-shadow: var(--shadow-md);
     background-color: var(--color-secondary);
