@@ -738,7 +738,6 @@ select.form-control {
 }
 
 /* END PERPLEXITY DESIGN SYSTEM */
-```css
 /* Reset and Base Styles */
 * {
     margin: 0;
@@ -751,7 +750,6 @@ body {
     line-height: var(--line-height-normal);
     color: var(--color-text);
     background-color: var(--color-background);
-    font-size: var(--font-size-base);
 }
 
 .container {
@@ -762,14 +760,14 @@ body {
 
 /* Header/Profile Section */
 .profile-header {
-    background: var(--color-slate-900);
-    color: var(--color-surface);
+    background: linear-gradient(135deg, var(--color-slate-900) 0%, var(--color-charcoal-700) 100%);
+    color: var(--color-cream-100);
     padding: var(--space-32) 0;
     text-align: center;
 }
 
 .profile-container {
-    max-width: var(--container-md);
+    max-width: 800px;
     margin: 0 auto;
     padding: 0 var(--space-20);
 }
@@ -777,9 +775,9 @@ body {
 .profile-pic {
     width: 180px;
     height: 180px;
-    border-radius: var(--radius-full);
+    border-radius: 50%;
     object-fit: cover;
-    border: 5px solid var(--color-surface);
+    border: 5px solid var(--color-cream-100);
     box-shadow: var(--shadow-lg);
     margin-bottom: var(--space-32);
 }
@@ -788,9 +786,9 @@ body {
     font-size: var(--font-size-4xl);
     font-weight: var(--font-weight-bold);
     margin-bottom: var(--space-10);
-    color: var(--color-surface);
-    line-height: var(--line-height-tight);
+    color: var(--color-cream-100);
     letter-spacing: var(--letter-spacing-tight);
+    line-height: var(--line-height-tight);
 }
 
 .profile-info h2 {
@@ -813,16 +811,11 @@ body {
 .contact-info a {
     color: var(--color-primary);
     text-decoration: none;
-    transition: color var(--duration-normal) var(--ease-standard);
+    transition: color var(--duration-fast) var(--ease-standard);
 }
 
 .contact-info a:hover {
     color: var(--color-primary-hover);
-}
-
-.contact-info a:focus {
-    outline: var(--focus-outline);
-    outline-offset: var(--space-2);
 }
 
 /* Sections */
@@ -857,7 +850,7 @@ section h2:after {
 
 .about p {
     font-size: var(--font-size-lg);
-    max-width: var(--container-md);
+    max-width: 800px;
     margin: 0 auto var(--space-20);
     text-align: center;
     color: var(--color-text-secondary);
@@ -871,11 +864,10 @@ section h2:after {
 .project-card {
     background: var(--color-surface);
     border-radius: var(--radius-lg);
-    box-shadow: var(--shadow-sm);
+    box-shadow: var(--shadow-md);
     margin-bottom: var(--space-24);
     overflow: hidden;
-    transition: transform var(--duration-normal) var(--ease-standard), 
-                box-shadow var(--duration-normal) var(--ease-standard);
+    transition: transform var(--duration-normal) var(--ease-standard), box-shadow var(--duration-normal) var(--ease-standard);
     border: 1px solid var(--color-card-border);
 }
 
@@ -884,35 +876,41 @@ section h2:after {
     box-shadow: var(--shadow-lg);
 }
 
+.project-card h3 {
+    font-size: var(--font-size-2xl);
+    color: var(--color-text);
+    margin: 0;
+    padding: var(--space-32) var(--space-32) var(--space-20) var(--space-32);
+    border-bottom: 2px solid var(--color-primary);
+    background: var(--color-background);
+    font-weight: var(--font-weight-semibold);
+    letter-spacing: var(--letter-spacing-tight);
+}
+
+/* Single Project Image */
 .project-image {
     width: 100%;
+    height: 350px;
+    object-fit: cover;
+    display: block;
+}
+
+/* Dual Project Images - Side by Side */
+.project-images-dual {
+    display: flex;
+    gap: 0;
+    width: 100%;
+}
+
+.project-image-dual {
+    width: 50%;
     height: 300px;
     object-fit: cover;
-}
-
-.project-images {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 0;
-}
-
-.project-images .project-image {
-    height: 250px;
+    display: block;
 }
 
 .project-content {
     padding: var(--space-32);
-}
-
-.project-card h3 {
-    font-size: var(--font-size-2xl);
-    color: var(--color-text);
-    margin-bottom: var(--space-20);
-    border-bottom: 2px solid var(--color-primary);
-    padding-bottom: var(--space-10);
-    font-weight: var(--font-weight-semibold);
-    line-height: var(--line-height-tight);
-    letter-spacing: var(--letter-spacing-tight);
 }
 
 .project-details {
@@ -928,6 +926,11 @@ section h2:after {
     font-size: var(--font-size-xl);
     margin-bottom: var(--space-10);
     font-weight: var(--font-weight-semibold);
+}
+
+.detail-section p {
+    color: var(--color-text-secondary);
+    margin-bottom: var(--space-10);
 }
 
 .detail-section ul {
@@ -946,10 +949,11 @@ section h2:after {
     border-radius: var(--radius-base);
     font-size: var(--font-size-sm);
     border-left: 4px solid var(--color-primary);
+    margin-top: var(--space-20);
 }
 
 .highlight {
-    background: rgba(var(--color-teal-500-rgb), 0.1);
+    background: var(--color-bg-1);
     padding: var(--space-16);
     border-radius: var(--radius-base);
     border-left: 4px solid var(--color-primary);
@@ -974,29 +978,23 @@ section h2:after {
     padding: var(--space-32);
     border-radius: var(--radius-lg);
     border-left: 5px solid var(--color-primary);
-    box-shadow: var(--shadow-xs);
+    border: 1px solid var(--color-card-border);
 }
 
 .patent-card h3 {
     margin-bottom: var(--space-16);
     color: var(--color-text);
     font-weight: var(--font-weight-semibold);
-    line-height: var(--line-height-tight);
 }
 
 .patent-card h3 a {
     color: var(--color-primary);
     text-decoration: none;
-    transition: color var(--duration-normal) var(--ease-standard);
+    transition: color var(--duration-fast) var(--ease-standard);
 }
 
 .patent-card h3 a:hover {
     color: var(--color-primary-hover);
-}
-
-.patent-card h3 a:focus {
-    outline: var(--focus-outline);
-    outline-offset: var(--space-2);
 }
 
 .patent-card p {
@@ -1006,12 +1004,12 @@ section h2:after {
 
 /* Skills Section */
 .skills {
-    background: var(--color-charcoal-700);
-    color: var(--color-surface);
+    background: var(--color-slate-900);
+    color: var(--color-cream-100);
 }
 
 .skills h2 {
-    color: var(--color-surface);
+    color: var(--color-cream-100);
 }
 
 .skills h2:after {
@@ -1030,7 +1028,6 @@ section h2:after {
     margin-bottom: var(--space-20);
     color: var(--color-primary);
     font-weight: var(--font-weight-semibold);
-    line-height: var(--line-height-tight);
 }
 
 .skills-column ul {
@@ -1039,7 +1036,7 @@ section h2:after {
 
 .skills-column li {
     padding: var(--space-12) 0;
-    border-bottom: 1px solid var(--color-slate-500);
+    border-bottom: 1px solid var(--color-charcoal-800);
     position: relative;
     padding-left: var(--space-24);
 }
@@ -1099,8 +1096,8 @@ section h2:after {
 
 /* Footer */
 footer {
-    background: var(--color-charcoal-700);
-    color: var(--color-surface);
+    background: var(--color-slate-900);
+    color: var(--color-cream-100);
     text-align: center;
     padding: var(--space-32) 0;
 }
@@ -1124,21 +1121,37 @@ footer {
         font-size: var(--font-size-2xl);
     }
     
-    .project-images {
-        grid-template-columns: 1fr;
+    .project-card h3 {
+        font-size: var(--font-size-xl);
+        padding: var(--space-20) var(--space-20) var(--space-16) var(--space-20);
+    }
+    
+    .project-content {
+        padding: var(--space-20);
+    }
+    
+    .project-images-dual {
+        flex-direction: column;
+    }
+    
+    .project-image-dual {
+        width: 100%;
+        height: 250px;
     }
     
     .patent-grid {
         grid-template-columns: 1fr;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     }
     
     .skills-grid {
         grid-template-columns: 1fr;
-        gap: var(--space-24);
+        gap: var(--space-32);
     }
     
     .testimonial-grid {
         grid-template-columns: 1fr;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     }
     
     .container {
@@ -1150,7 +1163,7 @@ footer {
     }
     
     section {
-        padding: var(--space-24) 0;
+        padding: var(--space-32) 0;
     }
 }
 
@@ -1164,15 +1177,16 @@ footer {
         height: 120px;
     }
     
+    .project-card h3 {
+        font-size: var(--font-size-lg);
+        padding: var(--space-16) var(--space-16) var(--space-12) var(--space-16);
+    }
+    
     .project-content {
-        padding: var(--space-20);
+        padding: var(--space-16);
     }
     
     .patent-card {
-        padding: var(--space-20);
-    }
-    
-    .testimonial-card {
         padding: var(--space-20);
     }
     
@@ -1180,13 +1194,20 @@ footer {
         grid-template-columns: 1fr;
     }
     
+    .testimonial-card {
+        padding: var(--space-20);
+    }
+    
     .testimonial-grid {
         grid-template-columns: 1fr;
     }
     
-    .skills-grid {
-        grid-template-columns: 1fr;
-        gap: var(--space-20);
+    .project-image {
+        height: 250px;
+    }
+    
+    .project-image-dual {
+        height: 200px;
     }
     
     .container {
@@ -1198,12 +1219,16 @@ footer {
     }
     
     section {
-        padding: var(--space-20) 0;
+        padding: var(--space-24) 0;
     }
     
     section h2 {
         font-size: var(--font-size-xl);
         margin-bottom: var(--space-24);
+    }
+    
+    .skills-column h3 {
+        font-size: var(--font-size-xl);
     }
 }
 
@@ -1240,6 +1265,47 @@ footer {
 a:focus,
 button:focus {
     outline: var(--focus-outline);
-    outline-offset: var(--space-2);
+    outline-offset: 2px;
 }
-```
+
+a:focus-visible,
+button:focus-visible {
+    outline: var(--focus-outline);
+    outline-offset: 2px;
+}
+
+/* Additional styles for better image handling */
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Ensure images don't break layout if they fail to load */
+.project-image,
+.project-image-dual {
+    background-color: var(--color-secondary);
+    border: 1px solid var(--color-border);
+    position: relative;
+}
+
+.project-image::after,
+.project-image-dual::after {
+    content: 'Image Loading...';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: var(--color-text-secondary);
+    font-size: var(--font-size-sm);
+    display: none;
+}
+
+.project-image[src=""],
+.project-image-dual[src=""] {
+    background-color: var(--color-secondary);
+}
+
+.project-image[src=""]::after,
+.project-image-dual[src=""]::after {
+    display: block;
+}
