@@ -44,15 +44,17 @@ section h2 {
   padding: 1.2em 1em 1em 1em;
 }
 .profile-pic {
-  width: 160px;
-  height: 160px;
-  border-radius: 50%;
+  display: block;
+  margin: 32px auto 24px auto;
+  width: 170px;
+  height: 170px;
   object-fit: cover;
-  border: 4px solid #2978b5;
-  box-shadow: 0 4px 18px rgba(41,120,181,0.18), 0 1px 4px #dde6ef;
+  border-radius: 50%;
   background: #fff;
-  margin-bottom: 1em;
+  border: 5px solid #2978b5;
+  box-shadow: 0 6px 24px rgba(41,120,181,0.13), 0 1px 5px #dde6ef;
 }
+
 .card img {
   width: 100%;
   max-width: 360px;
