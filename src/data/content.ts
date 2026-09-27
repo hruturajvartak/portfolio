@@ -3,7 +3,7 @@ export const profile = {
   fullName: 'Hruturaj Vartak',
   title: 'Mechanical Engineering Leader',
   tagline:
-    'Mechanical Engineering Leader — 16+ years leading structural and fluid systems engineering across Zoomlion Heavy Industries, John Deere Harvester Works, CNH Industrial, and AGCO.',
+    'I help heavy equipment manufacturers ship more reliable products faster, through rigorous FEA-validated hydraulic and structural systems engineering.',
   email: 'hruturaj.vartak@gmail.com',
   linkedin: 'https://www.linkedin.com/in/hruturajvartak/',
 }
