@@ -1,7 +1,9 @@
 import { useState } from 'react'
+import ScrollProgress from './components/ScrollProgress'
 import Navbar from './components/Navbar'
 import Hero from './components/Hero'
 import SocialProof from './components/SocialProof'
+import StatsStrip from './components/StatsStrip'
 import Experience from './components/Experience'
 import Projects from './components/Projects'
 import About from './components/About'
@@ -10,6 +12,7 @@ import Patents from './components/Patents'
 import Skills from './components/Skills'
 import Contact from './components/Contact'
 import Footer from './components/Footer'
+import BackToTop from './components/BackToTop'
 import ContactModal from './components/ContactModal'
 
 export default function App() {
@@ -20,10 +23,12 @@ export default function App() {
 
   return (
     <>
+      <ScrollProgress />
       <Navbar onContactClick={openContact} />
       <main>
         <Hero onContactClick={openContact} />
         <SocialProof />
+        <StatsStrip />
         <Experience />
         <Projects />
         <About />
@@ -33,6 +38,7 @@ export default function App() {
         <Contact onContactClick={openContact} />
       </main>
       <Footer onContactClick={openContact} />
+      <BackToTop />
       <ContactModal open={contactOpen} onClose={closeContact} />
     </>
   )

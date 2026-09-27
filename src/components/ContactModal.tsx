@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { supabase } from '../lib/supabase'
 import { profile } from '../data/content'
 
@@ -34,6 +34,40 @@ export default function ContactModal({ open, onClose }: ContactModalProps) {
     window.addEventListener('keydown', handleEsc)
     return () => window.removeEventListener('keydown', handleEsc)
   }, [open, onClose])
+
+  const modalRef = useRef<HTMLDivElement>(null)
+  const firstInputRef = useRef<HTMLInputElement>(null)
+
+  useEffect(() => {
+    if (open && firstInputRef.current) {
+      const timer = setTimeout(() => firstInputRef.current?.focus(), 50)
+      return () => clearTimeout(timer)
+    }
+  }, [open])
+
+  useEffect(() => {
+    if (!open) return
+    const handleTab = (e: KeyboardEvent) => {
+      if (e.key !== 'Tab') return
+      const modal = modalRef.current
+      if (!modal) return
+      const focusable = modal.querySelectorAll<HTMLElement>(
+        'button, a, input, textarea, [tabindex]:not([tabindex="-1"])',
+      )
+      if (focusable.length === 0) return
+      const first = focusable[0]
+      const last = focusable[focusable.length - 1]
+      if (e.shiftKey && document.activeElement === first) {
+        e.preventDefault()
+        last.focus()
+      } else if (!e.shiftKey && document.activeElement === last) {
+        e.preventDefault()
+        first.focus()
+      }
+    }
+    window.addEventListener('keydown', handleTab)
+    return () => window.removeEventListener('keydown', handleTab)
+  }, [open])
 
   if (!open) return null
 
@@ -185,6 +219,7 @@ export default function ContactModal({ open, onClose }: ContactModalProps) {
                   type="text"
                   value={name}
                   onChange={(e) => setName(e.target.value)}
+                  ref={firstInputRef}
                   required
                   style={{
                     width: '100%',

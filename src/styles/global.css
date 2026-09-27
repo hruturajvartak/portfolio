@@ -211,6 +211,9 @@ button {
   .nav-links {
     gap: var(--space-4) !important;
   }
+  .stats-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
 }
 
 @media (max-width: 768px) {
@@ -226,6 +229,12 @@ button {
   }
   .nav-links {
     display: none !important;
+  }
+  .nav-contact-btn {
+    display: none !important;
+  }
+  .nav-hamburger {
+    display: flex !important;
   }
   .about-grid {
     grid-template-columns: 1fr !important;
@@ -247,6 +256,18 @@ button {
     grid-template-columns: 1fr !important;
   }
   .skills-grid {
+    grid-template-columns: 1fr !important;
+  }
+  .scroll-indicator {
+    display: none !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .section-title {
+    font-size: var(--text-2xl);
+  }
+  .stats-grid {
     grid-template-columns: 1fr !important;
   }
 }

@@ -1,3 +1,4 @@
+import { useMemo, useState } from 'react'
 import { projects } from '../data/content'
 import DiagramPlaceholder from './DiagramPlaceholder'
 
@@ -20,242 +21,288 @@ const diagramLabels = [
 ]
 
 export default function Projects() {
+  const categories = useMemo(
+    () => ['All', ...Array.from(new Set(projects.map((p) => p.category)))],
+    [],
+  )
+  const [filter, setFilter] = useState('All')
+
+  const filtered = filter === 'All' ? projects : projects.filter((p) => p.category === filter)
+
   return (
     <section id="projects" className="section">
       <div className="container">
         <p className="section-label">Projects</p>
         <h2 className="section-title">Selected Work</h2>
-        <div style={{ display: 'flex', flexDirection: 'column', gap: 'var(--space-12)' }}>
-          {projects.map((project, i) => (
-            <article
-              key={project.title}
-              style={{
-                background: 'var(--graphite-900)',
-                border: '1px solid var(--graphite-800)',
-                borderRadius: 'var(--radius-xl)',
-                overflow: 'hidden',
-                transition: 'border-color var(--transition-normal)',
-              }}
-              onMouseEnter={(e) =>
-                (e.currentTarget.style.borderColor = 'var(--graphite-700)')
-              }
-              onMouseLeave={(e) =>
-                (e.currentTarget.style.borderColor = 'var(--graphite-800)')
-              }
-            >
-              <div
-                className="project-grid"
-              style={{
-                  display: 'grid',
-                  gridTemplateColumns: '340px 1fr',
-                  gap: 0,
+
+        {/* Filter tabs */}
+        <div
+          style={{
+            display: 'flex',
+            gap: 'var(--space-2)',
+            flexWrap: 'wrap',
+            marginBottom: 'var(--space-10)',
+          }}
+        >
+          {categories.map((cat) => {
+            const isActive = filter === cat
+            return (
+              <button
+                key={cat}
+                onClick={() => setFilter(cat)}
+                style={{
+                  fontSize: 'var(--text-sm)',
+                  fontWeight: 500,
+                  fontFamily: 'var(--font-heading)',
+                  color: isActive ? 'var(--white)' : 'var(--graphite-400)',
+                  background: isActive ? 'var(--steel-blue-dark)' : 'transparent',
+                  border: `1px solid ${isActive ? 'var(--steel-blue)' : 'var(--graphite-700)'}`,
+                  padding: 'var(--space-2) var(--space-4)',
+                  borderRadius: 'var(--radius-full)',
+                  transition: 'all var(--transition-fast)',
                 }}
               >
-                {/* Diagram */}
+                {cat}
+              </button>
+            )
+          })}
+        </div>
+
+        <div style={{ display: 'flex', flexDirection: 'column', gap: 'var(--space-12)' }}>
+          {filtered.map((project) => {
+            const originalIndex = projects.indexOf(project)
+            return (
+              <article
+                key={project.title}
+                style={{
+                  background: 'var(--graphite-900)',
+                  border: '1px solid var(--graphite-800)',
+                  borderRadius: 'var(--radius-xl)',
+                  overflow: 'hidden',
+                  transition: 'border-color var(--transition-normal)',
+                  animation: 'fadeInUp 0.4s ease forwards',
+                }}
+                onMouseEnter={(e) =>
+                  (e.currentTarget.style.borderColor = 'var(--graphite-700)')
+                }
+                onMouseLeave={(e) =>
+                  (e.currentTarget.style.borderColor = 'var(--graphite-800)')
+                }
+              >
                 <div
+                  className="project-grid"
                   style={{
-                    padding: 'var(--space-8)',
-                    background: 'var(--graphite-850)',
-                    borderRight: '1px solid var(--graphite-800)',
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'center',
+                    display: 'grid',
+                    gridTemplateColumns: '340px 1fr',
+                    gap: 0,
                   }}
-                  className="project-diagram-col"
                 >
-                  <DiagramPlaceholder
-                    variant={diagramVariants[i]}
-                    label={diagramLabels[i]}
-                  />
-                </div>
-
-                {/* Content */}
-                <div style={{ padding: 'var(--space-8)' }}>
-                  <span
-                    style={{
-                      fontSize: 'var(--text-xs)',
-                      textTransform: 'uppercase',
-                      letterSpacing: '0.1em',
-                      color: 'var(--steel-blue)',
-                      fontFamily: 'var(--font-heading)',
-                      fontWeight: 600,
-                    }}
-                  >
-                    {project.category}
-                  </span>
-                  <h3
-                    style={{
-                      fontSize: 'var(--text-2xl)',
-                      color: 'var(--white)',
-                      marginTop: 'var(--space-2)',
-                      marginBottom: 'var(--space-5)',
-                      lineHeight: 1.3,
-                    }}
-                  >
-                    {project.title}
-                  </h3>
-
-                  <p
-                    style={{
-                      fontSize: 'var(--text-base)',
-                      color: 'var(--graphite-200)',
-                      marginBottom: 'var(--space-6)',
-                      lineHeight: 1.7,
-                    }}
-                  >
-                    {project.goal}
-                  </p>
-
+                  {/* Diagram */}
                   <div
                     style={{
-                      display: 'grid',
-                      gridTemplateColumns: '1fr 1fr',
-                      gap: 'var(--space-6)',
-                      marginBottom: 'var(--space-6)',
+                      padding: 'var(--space-8)',
+                      background: 'var(--graphite-850)',
+                      borderRight: '1px solid var(--graphite-800)',
+                      display: 'flex',
+                      alignItems: 'center',
+                      justifyContent: 'center',
                     }}
-                    className="project-details-grid"
+                    className="project-diagram-col"
                   >
-                    <div>
-                      <h4
-                        style={{
-                          fontSize: 'var(--text-sm)',
-                          textTransform: 'uppercase',
-                          letterSpacing: '0.08em',
-                          color: 'var(--graphite-400)',
-                          marginBottom: 'var(--space-3)',
-                          fontFamily: 'var(--font-heading)',
-                        }}
-                      >
-                        Contributions
-                      </h4>
-                      <ul style={{ display: 'flex', flexDirection: 'column', gap: 'var(--space-2)' }}>
-                        {project.contributions.map((c, j) => (
-                          <li
-                            key={j}
-                            style={{
-                              fontSize: 'var(--text-sm)',
-                              color: 'var(--graphite-300)',
-                              lineHeight: 1.6,
-                              display: 'grid',
-                              gridTemplateColumns: '16px 1fr',
-                              gap: 'var(--space-2)',
-                            }}
-                          >
-                            <span style={{ color: 'var(--steel-blue)' }}>▸</span>
-                            <span>{c}</span>
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-                    <div>
-                      <h4
-                        style={{
-                          fontSize: 'var(--text-sm)',
-                          textTransform: 'uppercase',
-                          letterSpacing: '0.08em',
-                          color: 'var(--graphite-400)',
-                          marginBottom: 'var(--space-3)',
-                          fontFamily: 'var(--font-heading)',
-                        }}
-                      >
-                        Analysis & Validation
-                      </h4>
-                      <ul style={{ display: 'flex', flexDirection: 'column', gap: 'var(--space-2)' }}>
-                        {project.analysis.map((a, j) => (
-                          <li
-                            key={j}
-                            style={{
-                              fontSize: 'var(--text-sm)',
-                              color: 'var(--graphite-300)',
-                              lineHeight: 1.6,
-                              display: 'grid',
-                              gridTemplateColumns: '16px 1fr',
-                              gap: 'var(--space-2)',
-                            }}
-                          >
-                            <span style={{ color: 'var(--steel-blue)' }}>▸</span>
-                            <span>{a}</span>
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
+                    <DiagramPlaceholder
+                      variant={diagramVariants[originalIndex]}
+                      label={diagramLabels[originalIndex]}
+                    />
                   </div>
 
-                  {/* Results */}
-                  <div
-                    style={{
-                      background: 'var(--graphite-800)',
-                      borderRadius: 'var(--radius-md)',
-                      padding: 'var(--space-5)',
-                      marginBottom: 'var(--space-5)',
-                    }}
-                  >
-                    <h4
+                  {/* Content */}
+                  <div style={{ padding: 'var(--space-8)' }}>
+                    <span
                       style={{
-                        fontSize: 'var(--text-sm)',
-                        color: 'var(--steel-blue-bright)',
-                        marginBottom: 'var(--space-3)',
+                        fontSize: 'var(--text-xs)',
+                        textTransform: 'uppercase',
+                        letterSpacing: '0.1em',
+                        color: 'var(--steel-blue)',
                         fontFamily: 'var(--font-heading)',
+                        fontWeight: 600,
                       }}
                     >
-                      Results
-                    </h4>
-                    <ul
+                      {project.category}
+                    </span>
+                    <h3
                       style={{
-                        display: 'flex',
-                        flexDirection: 'column',
-                        gap: 'var(--space-2)',
+                        fontSize: 'var(--text-2xl)',
+                        color: 'var(--white)',
+                        marginTop: 'var(--space-2)',
+                        marginBottom: 'var(--space-5)',
+                        lineHeight: 1.3,
                       }}
                     >
-                      {project.results.map((r, j) => (
-                        <li
-                          key={j}
+                      {project.title}
+                    </h3>
+
+                    <p
+                      style={{
+                        fontSize: 'var(--text-base)',
+                        color: 'var(--graphite-200)',
+                        marginBottom: 'var(--space-6)',
+                        lineHeight: 1.7,
+                      }}
+                    >
+                      {project.goal}
+                    </p>
+
+                    <div
+                      style={{
+                        display: 'grid',
+                        gridTemplateColumns: '1fr 1fr',
+                        gap: 'var(--space-6)',
+                        marginBottom: 'var(--space-6)',
+                      }}
+                      className="project-details-grid"
+                    >
+                      <div>
+                        <h4
                           style={{
                             fontSize: 'var(--text-sm)',
-                            color: 'var(--graphite-200)',
-                            lineHeight: 1.6,
-                            display: 'grid',
-                            gridTemplateColumns: '16px 1fr',
-                            gap: 'var(--space-2)',
+                            textTransform: 'uppercase',
+                            letterSpacing: '0.08em',
+                            color: 'var(--graphite-400)',
+                            marginBottom: 'var(--space-3)',
+                            fontFamily: 'var(--font-heading)',
                           }}
                         >
-                          <span style={{ color: 'var(--steel-blue-bright)' }}>◆</span>
-                          <span>{r}</span>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
+                          Contributions
+                        </h4>
+                        <ul style={{ display: 'flex', flexDirection: 'column', gap: 'var(--space-2)' }}>
+                          {project.contributions.map((c, j) => (
+                            <li
+                              key={j}
+                              style={{
+                                fontSize: 'var(--text-sm)',
+                                color: 'var(--graphite-300)',
+                                lineHeight: 1.6,
+                                display: 'grid',
+                                gridTemplateColumns: '16px 1fr',
+                                gap: 'var(--space-2)',
+                              }}
+                            >
+                              <span style={{ color: 'var(--steel-blue)' }}>▸</span>
+                              <span>{c}</span>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                      <div>
+                        <h4
+                          style={{
+                            fontSize: 'var(--text-sm)',
+                            textTransform: 'uppercase',
+                            letterSpacing: '0.08em',
+                            color: 'var(--graphite-400)',
+                            marginBottom: 'var(--space-3)',
+                            fontFamily: 'var(--font-heading)',
+                          }}
+                        >
+                          Analysis & Validation
+                        </h4>
+                        <ul style={{ display: 'flex', flexDirection: 'column', gap: 'var(--space-2)' }}>
+                          {project.analysis.map((a, j) => (
+                            <li
+                              key={j}
+                              style={{
+                                fontSize: 'var(--text-sm)',
+                                color: 'var(--graphite-300)',
+                                lineHeight: 1.6,
+                                display: 'grid',
+                                gridTemplateColumns: '16px 1fr',
+                                gap: 'var(--space-2)',
+                              }}
+                            >
+                              <span style={{ color: 'var(--steel-blue)' }}>▸</span>
+                              <span>{a}</span>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                    </div>
 
-                  {/* Skills */}
-                  <div
-                    style={{
-                      display: 'flex',
-                      gap: 'var(--space-2)',
-                      flexWrap: 'wrap',
-                    }}
-                  >
-                    {project.skills.map((skill) => (
-                      <span
-                        key={skill}
+                    {/* Results */}
+                    <div
+                      style={{
+                        background: 'var(--graphite-800)',
+                        borderRadius: 'var(--radius-md)',
+                        padding: 'var(--space-5)',
+                        marginBottom: 'var(--space-5)',
+                      }}
+                    >
+                      <h4
                         style={{
-                          fontSize: 'var(--text-xs)',
-                          color: 'var(--graphite-300)',
-                          background: 'var(--graphite-850)',
-                          border: '1px solid var(--graphite-700)',
-                          padding: 'var(--space-1) var(--space-3)',
-                          borderRadius: 'var(--radius-full)',
+                          fontSize: 'var(--text-sm)',
+                          color: 'var(--steel-blue-bright)',
+                          marginBottom: 'var(--space-3)',
                           fontFamily: 'var(--font-heading)',
-                          fontWeight: 500,
                         }}
                       >
-                        {skill}
-                      </span>
-                    ))}
+                        Results
+                      </h4>
+                      <ul
+                        style={{
+                          display: 'flex',
+                          flexDirection: 'column',
+                          gap: 'var(--space-2)',
+                        }}
+                      >
+                        {project.results.map((r, j) => (
+                          <li
+                            key={j}
+                            style={{
+                              fontSize: 'var(--text-sm)',
+                              color: 'var(--graphite-200)',
+                              lineHeight: 1.6,
+                              display: 'grid',
+                              gridTemplateColumns: '16px 1fr',
+                              gap: 'var(--space-2)',
+                            }}
+                          >
+                            <span style={{ color: 'var(--steel-blue-bright)' }}>◆</span>
+                            <span>{r}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+
+                    {/* Skills */}
+                    <div
+                      style={{
+                        display: 'flex',
+                        gap: 'var(--space-2)',
+                        flexWrap: 'wrap',
+                      }}
+                    >
+                      {project.skills.map((skill) => (
+                        <span
+                          key={skill}
+                          style={{
+                            fontSize: 'var(--text-xs)',
+                            color: 'var(--graphite-300)',
+                            background: 'var(--graphite-850)',
+                            border: '1px solid var(--graphite-700)',
+                            padding: 'var(--space-1) var(--space-3)',
+                            borderRadius: '9999px',
+                            fontFamily: 'var(--font-heading)',
+                            fontWeight: 500,
+                          }}
+                        >
+                          {skill}
+                        </span>
+                      ))}
+                    </div>
                   </div>
                 </div>
-              </div>
-            </article>
-          ))}
+              </article>
+            )
+          })}
         </div>
       </div>
     </section>
