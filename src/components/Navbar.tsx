@@ -91,7 +91,7 @@ export default function Navbar({ onContactClick }: NavbarProps) {
             onMouseEnter={(e) => (e.currentTarget.style.background = 'var(--steel-blue-bright)')}
             onMouseLeave={(e) => (e.currentTarget.style.background = 'var(--steel-blue)')}
           >
-            Get in Touch
+            Contact Me
           </button>
         </div>
       </div>

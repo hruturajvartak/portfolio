@@ -1,9 +1,9 @@
 export const profile = {
-  name: 'Raj Vartak',
+  name: 'Hruturaj (Raj) Vartak',
   fullName: 'Hruturaj Vartak',
   title: 'Mechanical Engineering Leader',
   tagline:
-    '16+ years leading structural and fluid systems engineering across Zoomlion, John Deere, CNH Industrial, and AGCO.',
+    'Mechanical Engineering Leader — 16+ years leading structural and fluid systems engineering across Zoomlion Heavy Industries, John Deere Harvester Works, CNH Industrial, and AGCO.',
   email: 'hruturaj.vartak@gmail.com',
   linkedin: 'https://www.linkedin.com/in/hruturajvartak/',
 }
