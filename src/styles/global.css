@@ -258,9 +258,7 @@ button {
   .skills-grid {
     grid-template-columns: 1fr !important;
   }
-  .scroll-indicator {
-    display: none !important;
-  }
+
 }
 
 @media (max-width: 480px) {

@@ -102,51 +102,6 @@ export default function Hero({ onContactClick }: HeroProps) {
           Contact Me
         </button>
       </div>
-
-      {/* Scroll indicator */}
-      <div
-        aria-hidden
-        style={{
-          position: 'absolute',
-          bottom: 'var(--space-8)',
-          left: '50%',
-          transform: 'translateX(-50%)',
-          display: 'flex',
-          flexDirection: 'column',
-          alignItems: 'center',
-          gap: 'var(--space-2)',
-          opacity: 0,
-          animation: 'fadeIn 1s ease 1.2s forwards',
-        }}
-        className="scroll-indicator"
-      >
-        <span
-          style={{
-            fontSize: 'var(--text-xs)',
-            color: 'var(--graphite-500)',
-            textTransform: 'uppercase',
-            letterSpacing: '0.15em',
-            fontFamily: 'var(--font-heading)',
-            fontWeight: 500,
-          }}
-        >
-          Scroll
-        </span>
-        <svg
-          width="20"
-          height="32"
-          viewBox="0 0 20 32"
-          fill="none"
-          stroke="var(--graphite-500)"
-          strokeWidth="1.5"
-        >
-          <rect x="3" y="2" width="14" height="22" rx="7" opacity="0.5" />
-          <circle cx="10" cy="9" r="2.5" fill="var(--steel-blue)" stroke="none">
-            <animate attributeName="cy" values="9;16;9" dur="1.8s" repeatCount="indefinite" />
-            <animate attributeName="opacity" values="1;0.3;1" dur="1.8s" repeatCount="indefinite" />
-          </circle>
-        </svg>
-      </div>
     </header>
   )
 }
