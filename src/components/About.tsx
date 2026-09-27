@@ -1,11 +1,11 @@
-import { profile, skills } from '../data/content'
+import { profile } from '../data/content'
 
 export default function About() {
   return (
     <section id="about" className="section">
       <div className="container">
         <p className="section-label">About</p>
-        <h2 className="section-title">Background</h2>
+        <h2 className="section-title">About</h2>
         <div
           style={{
             display: 'grid',
@@ -50,79 +50,23 @@ export default function About() {
           {/* Bio */}
           <div style={{ display: 'flex', flexDirection: 'column', gap: 'var(--space-5)' }}>
             <p style={{ fontSize: 'var(--text-lg)', lineHeight: 1.8, color: 'var(--graphite-200)' }}>
-              I'm {profile.fullName}, a mechanical engineering leader with 16+ years in structural
-              and fluid systems design. My work spans welded steel structures, load-sense hydraulic
-              systems, FEA correlation, and digital twin implementation across heavy equipment and
-              agricultural machinery.
+              I'm {profile.fullName}, a mechanical engineering leader with 16+ years of experience
+              in structural and fluid systems engineering. My career path spans Facade India Testing,
+              CNH Industrial and AGCO, John Deere Harvester Works, and Zoomlion Heavy Industries —
+              progressing from hands-on engineering to leading cross-functional teams.
             </p>
             <p style={{ lineHeight: 1.8 }}>
-              At Zoomlion, I built and led a 12-engineer team delivering three product launches
-              ahead of schedule, cutting the development cycle from 9 to 6 months, and reducing
-              subsystem failures by 40% through DFMEA rigor and durability validation. My FEA work
-              in ANSYS and Abaqus consistently correlates within 92% of physical test results.
+              My core focus is on welded and fabricated steel structures, load-sense hydraulic
+              systems, FEA correlation in ANSYS and Abaqus, and durability validation through
+              DFMEA and DVP&R rigor. At Zoomlion, I built and led a 12-engineer team across the
+              US and China, delivering three product launches ahead of schedule while cutting the
+              development cycle from 9 to 6 months.
             </p>
             <p style={{ lineHeight: 1.8 }}>
-              I hold two granted US patents, an MS in Mechanical Engineering, an MBA, and MIT xPRO
-              certifications in AI Strategy and AI Product Design.
+              I hold a B.E. and M.S. in Mechanical Engineering, an MBA, and two granted US patents.
+              My FEA work consistently correlates within 92% of physical test results, and I've
+              driven 40% reduction in subsystem failures through structured validation programs.
             </p>
-
-            {/* Education & Certifications */}
-            <div
-              style={{
-                display: 'grid',
-                gridTemplateColumns: '1fr 1fr',
-                gap: 'var(--space-6)',
-                marginTop: 'var(--space-4)',
-                paddingTop: 'var(--space-6)',
-                borderTop: '1px solid var(--graphite-800)',
-              }}
-              className="about-creds"
-            >
-              <div>
-                <h4
-                  style={{
-                    fontSize: 'var(--text-sm)',
-                    textTransform: 'uppercase',
-                    letterSpacing: '0.1em',
-                    color: 'var(--steel-blue)',
-                    marginBottom: 'var(--space-3)',
-                    fontFamily: 'var(--font-heading)',
-                  }}
-                >
-                  Education
-                </h4>
-                <ul style={{ display: 'flex', flexDirection: 'column', gap: 'var(--space-2)' }}>
-                  {skills.education.map((edu) => (
-                    <li key={edu.degree} style={{ fontSize: 'var(--text-sm)', color: 'var(--graphite-300)' }}>
-                      <span style={{ color: 'var(--white)', fontWeight: 500 }}>{edu.degree}</span>
-                      <br />
-                      {edu.school}
-                    </li>
-                  ))}
-                </ul>
-              </div>
-              <div>
-                <h4
-                  style={{
-                    fontSize: 'var(--text-sm)',
-                    textTransform: 'uppercase',
-                    letterSpacing: '0.1em',
-                    color: 'var(--steel-blue)',
-                    marginBottom: 'var(--space-3)',
-                    fontFamily: 'var(--font-heading)',
-                  }}
-                >
-                  Certifications
-                </h4>
-                <ul style={{ display: 'flex', flexDirection: 'column', gap: 'var(--space-2)' }}>
-                  {skills.certifications.map((cert) => (
-                    <li key={cert} style={{ fontSize: 'var(--text-sm)', color: 'var(--graphite-300)' }}>
-                      {cert}
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            </div>
           </div>
         </div>
       </div>
