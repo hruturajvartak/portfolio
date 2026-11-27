@@ -237,7 +237,7 @@ export const skills = {
   software: ['Creo', 'SolidWorks', 'NX', 'AutoCAD', 'Teamcenter', 'Windchill'],
   education: [
     { degree: 'B.E., Mechanical Engineering', school: 'University of Mumbai' },
-    { degree: 'M.S., Mechanical Engineering', school: 'Pittsburg State University' },
+    { degree: 'Masters in Engineering, Mechanical Engineering Technology', school: 'Pittsburg State University' },
     { degree: 'MBA', school: 'Sullivan University' },
   ],
   certifications: [

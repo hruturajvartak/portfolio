@@ -25,7 +25,8 @@ export default function About() {
               months.
             </p>
             <p>
-              I hold a B.E. and M.S. in Mechanical Engineering, an MBA, and two granted US patents.
+              I hold a B.E. in Mechanical Engineering, a Masters in Engineering (Mechanical Engineering
+              Technology), an MBA, and two granted US patents.
               My FEA work consistently correlates within 92% of physical test results, and
               structured validation programs I led cut subsystem failures by 40%.
             </p>
