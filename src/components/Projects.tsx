@@ -18,7 +18,7 @@ export default function Projects() {
         <SectionHead
           eyebrow="Projects"
           title={<>Selected <em>work</em></>}
-          lead="Frames, arms, cabins and connected systems for excavators — each taken from concept through analysis and validation."
+          lead="Frames, arms, cabins and connected systems for excavators, each taken from concept through analysis and validation."
         />
 
         <div className="filters" role="group" aria-label="Filter projects by category">

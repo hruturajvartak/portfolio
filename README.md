@@ -8,7 +8,7 @@ This portfolio demonstrates 15+ years of experience in mechanical design, struct
 
 ## 🚀 Featured Projects
 
-### 1. Mini Excavator Frame – Zero Tail-Swing Design
+### 1. Mini Excavator Frame: Zero Tail-Swing Design
 - **Goal**: Create robust, lightweight 3.5mT mini-excavator frame
 - **Technologies**: CAD (Creo), FEA (Simscape), Material Optimization
 - **Results**: 15% lighter frame, improved fuel efficiency & maneuverability

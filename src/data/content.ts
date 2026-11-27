@@ -6,9 +6,9 @@ export const profile = {
   shortName: 'Raj Vartak',
   title: 'Mechanical Engineering Leader',
   tagline:
-    'Mechanical Engineering Leader — 16+ years leading structural and fluid systems engineering across Zoomlion Heavy Industries, John Deere Harvester Works, CNH Industrial, and AGCO.',
+    'Mechanical Engineering Leader with 16+ years leading structural and fluid systems engineering across Zoomlion Heavy Industries, John Deere Harvester Works, CNH Industrial, and AGCO.',
   summary:
-    '16+ years leading structural and fluid systems engineering for excavators, cranes and harvesters — from first CAD sketch and FEA correlation to durability validation and launch.',
+    '16+ years leading structural and fluid systems engineering for excavators, cranes and harvesters, from first CAD sketch and FEA correlation to durability validation and launch.',
   email: 'hruturaj.vartak@gmail.com',
   linkedin: 'https://www.linkedin.com/in/hruturajvartak/',
   photo: img('profile.jpg'),
@@ -74,7 +74,7 @@ export const experience = [
 
 export const projects = [
   {
-    title: 'Mini Excavator Frame — Zero Tail-Swing Design',
+    title: 'Mini Excavator Frame: Zero Tail-Swing Design',
     images: [{ src: img('mini-excavator-frame.png'), alt: 'FEA stress and displacement plot for the mini excavator frame, lateral load case' }],
     category: 'Structural Design',
     goal: 'Create a robust, lightweight, highly maneuverable 3.5 mT mini-excavator frame meeting safety and operational standards.',
@@ -95,7 +95,7 @@ export const projects = [
     skills: ['Creo', 'Simscape FEA', 'Material Optimization', 'Structural Engineering'],
   },
   {
-    title: 'Reduced Tail-Swing Excavator Frame — Design Process',
+    title: 'Reduced Tail-Swing Excavator Frame: Design Process',
     images: [
       { src: img('reduced-tail-swing-1.jpg'), alt: 'CAD model of the reduced tail-swing excavator frame' },
       { src: img('reduced-tail-swing-2.png'), alt: 'FEA results for the reduced tail-swing excavator frame' },
@@ -227,7 +227,7 @@ export const skills = {
   core: [
     'Welded and fabricated steel structures and frames',
     'Load-sense hydraulic and electro-hydraulic fluid systems',
-    'FEA in ANSYS and Abaqus — correlations within 92% of physical test results',
+    'FEA in ANSYS and Abaqus, with correlations within 92% of physical test results',
     'DFMEA / DVP&R',
     '1000+ cycle durability validation',
     'Pressure equipment certification: CE marking (EN 280), ANSI, CSA, ISO',
@@ -240,5 +240,8 @@ export const skills = {
     { degree: 'M.S., Mechanical Engineering', school: 'Pittsburg State University' },
     { degree: 'MBA', school: 'Sullivan University' },
   ],
-  certifications: ['MIT xPRO — AI Strategy', 'MIT xPRO — AI Product Design'],
+  certifications: [
+    { name: 'AI Strategy', org: 'MIT xPRO' },
+    { name: 'AI Product Design', org: 'MIT xPRO' },
+  ],
 }

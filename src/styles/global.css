@@ -1,8 +1,8 @@
 /* ==========================================================================
-   Design tokens — light, minimal, editorial
+   Design tokens: light, minimal, editorial
    ========================================================================== */
 :root {
-  /* Neutrals — pale sage paper + deep forest ink */
+  /* Neutrals: pale sage paper + deep forest ink */
   --bg: #f1f2ec;
   --bg-alt: #e6e8df;
   --surface: #fbfbf8;
@@ -13,7 +13,7 @@
   --line: #dadfd4;
   --line-strong: #c7cec0;
 
-  /* Accent — forest green for text, chartreuse for highlights */
+  /* Accent: forest green for text, chartreuse for highlights */
   --accent: #3c6b2f;
   --accent-ink: #2c5222;
   --accent-soft: #eef9c9;
@@ -41,10 +41,10 @@
   --font-body: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   --font-display: 'Newsreader', Georgia, 'Times New Roman', serif;
 
-  --text-xs: 0.875rem;   /* 14px — smallest text on the page */
+  --text-xs: 0.875rem;   /* 14px, smallest text on the page */
   --text-sm: 0.9375rem;  /* 15px */
   --text-base: 1.0625rem;/* 17px */
-  --text-md: 1.125rem;   /* 18px — body */
+  --text-md: 1.125rem;   /* 18px, body */
   --text-lg: 1.25rem;    /* 20px */
   --text-xl: 1.5rem;     /* 24px */
   --text-2xl: 2rem;      /* 32px */

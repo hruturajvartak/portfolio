@@ -8,13 +8,13 @@ export default function About() {
         <SectionHead eyebrow="About" title={<>Engineering that holds up <em>in the field</em></>} />
         <Reveal className="about">
           <p className="about__lead">
-            I design the steel structures and hydraulic systems that heavy machines depend on — and
+            I design the steel structures and hydraulic systems that heavy machines depend on, and
             build the teams and validation rigor that get them to <em>launch on time</em>.
           </p>
           <div className="about__body">
             <p>
               My career spans Facade India Testing, CNH Industrial and AGCO, John Deere Harvester
-              Works, and Zoomlion Heavy Industries — progressing from hands-on design and analysis to
+              Works, and Zoomlion Heavy Industries, progressing from hands-on design and analysis to
               leading cross-functional engineering teams across continents.
             </p>
             <p>
