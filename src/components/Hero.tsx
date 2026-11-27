@@ -11,15 +11,15 @@ export default function Hero({ onContactClick }: HeroProps) {
       <div className="container">
         <div className="hero__grid">
           <div className="hero__copy">
-            <p className="hero__status">
-              <span className="hero__status-dot" aria-hidden />
-              {profile.focus}
-            </p>
             <h1 className="hero__name">
               Hruturaj <em>(Raj)</em> Vartak
             </h1>
             <p className="hero__role">{profile.title}</p>
             <p className="hero__tagline">{profile.summary}</p>
+            <p className="hero__status">
+              <span className="hero__status-dot" aria-hidden />
+              {profile.focus}
+            </p>
             <div className="hero__ctas">
               <button className="btn btn--primary" onClick={onContactClick}>
                 Get in touch <ArrowRight />

@@ -8,13 +8,13 @@ export default function About() {
         <SectionHead eyebrow="About" title={<>Engineering that holds up <em>in the field</em></>} />
         <Reveal className="about">
           <p className="about__lead">
-            I design the steel structures and hydraulic systems that heavy machines depend on — and
+            I design the steel structures and hydraulic systems that heavy machines depend on, and
             build the teams and validation rigor that get them to <em>launch on time</em>.
           </p>
           <div className="about__body">
             <p>
               My career spans Facade India Testing, CNH Industrial and AGCO, John Deere Harvester
-              Works, and Zoomlion Heavy Industries — progressing from hands-on design and analysis to
+              Works, and Zoomlion Heavy Industries, progressing from hands-on design and analysis to
               leading cross-functional engineering teams across continents.
             </p>
             <p>
@@ -25,7 +25,8 @@ export default function About() {
               months.
             </p>
             <p>
-              I hold a B.E. and M.S. in Mechanical Engineering, an MBA, and two granted US patents.
+              I hold a B.E. in Mechanical Engineering, a Masters in Engineering (Mechanical Engineering
+              Technology), an MBA, and two granted US patents.
               My FEA work consistently correlates within 92% of physical test results, and
               structured validation programs I led cut subsystem failures by 40%.
             </p>

@@ -58,15 +58,12 @@ export default function Skills() {
             <div className="skills__group">
               <h3 className="skills__h">Certifications</h3>
               <ul className="edu-list">
-                {skills.certifications.map((c) => {
-                  const [org, name] = c.split(' — ')
-                  return (
-                    <li key={c}>
-                      <strong>{name ?? c}</strong>
-                      {name && <span>{org}</span>}
-                    </li>
-                  )
-                })}
+                {skills.certifications.map((c) => (
+                  <li key={c.name}>
+                    <strong>{c.name}</strong>
+                    <span>{c.org}</span>
+                  </li>
+                ))}
               </ul>
             </div>
           </div>

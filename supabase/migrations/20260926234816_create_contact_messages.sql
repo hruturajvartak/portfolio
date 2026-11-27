@@ -4,14 +4,14 @@
 1. New Tables
 - `contact_messages`
   - `id` (uuid, primary key)
-  - `name` (text, not null) — sender's full name
-  - `email` (text, not null) — sender's email
-  - `message` (text, not null) — the message body
+  - `name` (text, not null): sender's full name
+  - `email` (text, not null): sender's email
+  - `message` (text, not null): the message body
   - `created_at` (timestamptz, default now())
 2. Security
 - Enable RLS on `contact_messages`.
 - Allow anon + authenticated INSERT only (public contact form submissions).
-- No SELECT/UPDATE/DELETE for anon — only Raj should read these later via dashboard.
+- No SELECT/UPDATE/DELETE for anon; only Raj should read these later via dashboard.
 */
 
 CREATE TABLE IF NOT EXISTS contact_messages (
