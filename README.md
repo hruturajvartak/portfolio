@@ -86,33 +86,44 @@ This portfolio demonstrates 15+ years of experience in mechanical design, struct
 
 ## 🚀 Getting Started
 
-### Prerequisites
-- Modern web browser (Chrome, Firefox, Safari, Edge)
-- No additional software required
+Built with React, TypeScript and Vite.
 
-### Installation
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/yourusername/portfolio-main.git
-   cd portfolio-main
-   ```
+```bash
+npm ci
+npm run dev      # local dev server
+npm run build    # production build into dist/
+npm run preview  # preview the production build
+```
 
-2. Open `index.html` in your web browser
+### Contact form (optional)
+The contact form stores messages in Supabase. Create a `.env` file with:
 
-### Development
-- Edit `index.html` for content changes
-- Modify `style.css` for styling updates
-- Images are stored in the `images/` directory
+```
+VITE_SUPABASE_URL=...
+VITE_SUPABASE_ANON_KEY=...
+```
+
+Without these the site still works; the form just shows a "not configured" message.
+
+### Deployment
+Pushing to `main` builds the site and deploys it to GitHub Pages via
+`.github/workflows/deploy.yml`. In the repository settings, set
+**Settings → Pages → Build and deployment → Source** to **GitHub Actions**.
+To enable the contact form in production, add `VITE_SUPABASE_URL` and
+`VITE_SUPABASE_ANON_KEY` as repository secrets.
 
 ## 📁 Project Structure
 
 ```
-portfolio-main/
-├── index.html          # Main portfolio page
-├── style.css           # Styles and responsive design
-├── images/             # Project images and assets
-├── README.md           # This file
-└── .gitignore          # Git ignore file
+├── index.html              # Vite entry HTML
+├── src/
+│   ├── components/         # Page sections (Hero, Projects, Contact, ...)
+│   ├── data/content.ts     # Portfolio content
+│   ├── hooks/              # Scroll / active-section hooks
+│   ├── lib/supabase.ts     # Optional Supabase client
+│   └── styles/global.css
+├── supabase/migrations/    # contact_messages table
+└── .github/workflows/      # GitHub Pages deploy
 ```
 
 ## 🎨 Design System
