@@ -79,6 +79,9 @@ export default function ContactModal({ open, onClose }: ContactModalProps) {
     setErrorMsg('')
 
     try {
+      if (!supabase) {
+        throw new Error('The contact form is not configured right now. Please reach out via email or LinkedIn instead.')
+      }
       const { error } = await supabase.from('contact_messages').insert({
         name: name.trim(),
         email: email.trim(),
