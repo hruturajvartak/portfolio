@@ -38,37 +38,101 @@ export const stats = [
   { value: '40%', label: 'Reduction in Subsystem Failures' },
 ]
 
-export const experience = [
+export type Role = { title: string; dates: string; bullets: string[] }
+export type Job = { company: string; location: string; roles: Role[] }
+
+export const experience: Job[] = [
   {
-    company: 'Zoomlion Heavy Industries North America',
-    title: 'Engineering Manager, Structural Engineering',
-    dates: 'Apr 2022 – Mar 2025',
-    bullets: [
-      'Built and led a 12-engineer team across the US and China',
-      'Instituted DFMEA / DVP&R rigor and 1000+ cycle durability validation',
-      'Delivered 3 product launches 10–15% ahead of schedule; cut development cycle from 9 to 6 months',
-      'Reduced subsystem failures 40% and cost 10% through VAVE',
-      'Owned team budget for tooling, software, and capital equipment (3D printer, GPU, 3D scanner)',
-      'Developed senior and lead engineers on technical and leadership tracks',
+    company: 'Zoomlion Heavy Industries, North America',
+    location: 'Yorkville, WI, USA',
+    roles: [
+      {
+        title: 'Engineering Manager, Structures',
+        dates: 'Apr 2022 – Mar 2025',
+        bullets: [
+          'Led a 12-person team of engineers, designers and FEA resources across the US and China on excavator and compact equipment programs, setting priorities and schedules and chairing design reviews from concept through validation.',
+          'Delivered 3 product launches about 10 to 15% ahead of schedule and reduced one excavator development cycle from about 9 months to 6 through earlier simulation, closer coordination and structured validation.',
+          'Set up design review practices (component checklists, calculation and FEA reviews, documentation standards), tracked open issues to closure, and implemented ECR and ECO change management through the production release gate.',
+          'Planned and ran DVP&R validation with 1,000+ cycle durability testing on instrumented prototypes, with FEA matching measured strain within about 92% on one prototype; corrective actions reduced subsystem failures about 40%.',
+          'Defined interface ownership across mechanical, hydraulic, electrical and controls engineers, contributing to about 40% fewer integration issues.',
+          'Worked with plant manufacturing engineering and suppliers on DFM, DFA, weld and NDT specification and fixture requirements, and qualified suppliers through APQP and PPAP into production.',
+          'Set up and administered Teamcenter for drawing release, engineering change notices and BOM structure.',
+          'Cut dead weight 12% and peak stress 25% on a 15.5t reduced tail swing excavator structure while holding buckling resistance and fatigue-life requirements.',
+          'Owned the department budget for tooling, software, capital equipment and external training, and took 10% out of product cost through VAVE and part standardization.',
+          'Designed structural components for a hydraulically actuated gripper attachment for excavators.',
+          'Specified, sized and packaged swing gearboxes, travel drives and pump splitter gearboxes with suppliers.',
+        ],
+      },
+      {
+        title: 'Senior Engineer',
+        dates: 'Jan 2022 – Mar 2022',
+        bullets: [
+          'Led mechanical engineering on earthmoving programs, coordinating structural, hydraulic and controls engineers through design reviews, DFMEA, prototype development and validation.',
+        ],
+      },
+      {
+        title: 'Mechanical Engineer II',
+        dates: 'Apr 2019 – Dec 2021',
+        bullets: [
+          'Designed structural and hydraulic subsystems, components and assemblies for mini and compact excavators, considering performance, packaging, manufacturability and cost.',
+          'Supported design reviews, validation, supplier coordination and engineering changes, and worked with manufacturing and quality teams to resolve design issues.',
+        ],
+      },
     ],
   },
   {
     company: 'John Deere Harvester Works',
-    title: 'Mechanical Engineer',
-    dates: '2014 – 2019',
-    bullets: [],
+    location: 'East Moline, IL, USA',
+    roles: [
+      {
+        title: 'Design Engineer (Contract)',
+        dates: 'Oct 2014 – Apr 2019',
+        bullets: [
+          'Found insufficient weld root penetration as the cause of a recurring loading auger structural failure, and coordinated corrective actions with suppliers (weld penetration controls, standardized work instructions, process audits), reducing reported failures about 61%.',
+          'Led design and industrialization of injection-molded components through APQP and PPAP into volume production, with material selection and mold design reviews with tooling suppliers.',
+          'Designed and validated welded steel frames and fabricated assemblies for harvesting equipment, working with manufacturing, quality and supplier engineering.',
+        ],
+      },
+    ],
   },
   {
-    company: 'CNH Industrial and AGCO',
-    title: 'Mechanical Engineer',
-    dates: '2013 – 2014',
-    bullets: [],
+    company: 'CNH Industrial',
+    location: 'Fargo, ND, USA',
+    roles: [
+      {
+        title: 'Design Engineer (Contract)',
+        dates: 'Oct 2013 – Sep 2014',
+        bullets: [
+          'Updated mechanical designs, CAD models and drawings for agricultural equipment, and worked with manufacturing to resolve design and production issues.',
+        ],
+      },
+    ],
   },
   {
-    company: 'Facade India Testing, Thane',
-    title: 'Mechanical Engineer',
-    dates: '2006 – 2010',
-    bullets: [],
+    company: 'AGCO Corporation',
+    location: 'Hesston, KS, USA',
+    roles: [
+      {
+        title: 'Design Engineer (Contract)',
+        dates: 'Mar 2013 – Aug 2013',
+        bullets: [
+          'Designed stamped hoods, guards, brackets and mounting hardware, working with stamping suppliers on tooling design, blank development and manufacturability.',
+        ],
+      },
+    ],
+  },
+  {
+    company: 'Facade India Testing Inc.',
+    location: 'Thane, Maharashtra, India',
+    roles: [
+      {
+        title: 'Design Engineer',
+        dates: '2006 – 2010',
+        bullets: [
+          'Engineered formed and extruded panel assemblies, connections and anchorage for building facade systems, with submittals and mock-up and certification testing alongside fabricators.',
+        ],
+      },
+    ],
   },
 ]
 
