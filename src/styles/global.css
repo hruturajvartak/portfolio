@@ -18,6 +18,21 @@
   --accent-ink: #8f4120;
   --accent-soft: #f6e9e2;
 
+  --on-ink: #ffffff;          /* text on ink-coloured buttons */
+  --ink-hover: #000000;
+  --nav-bg: rgba(250, 249, 246, 0.85);
+
+  /* Dark contact band + footer */
+  --band-bg: var(--ink);
+  --band-text: #c9ccd3;
+  --band-heading: #ffffff;
+  --band-accent: #e7a27f;
+  --band-btn-bg: #ffffff;
+  --band-btn-text: var(--ink);
+  --band-btn-hover: #f1efe9;
+  --band-muted: #8d929c;
+  --band-line: #2a2d34;
+
   --success: #2f7d4f;
   --error: #b42318;
 
@@ -228,11 +243,11 @@ button {
 
 .btn--primary {
   background: var(--ink);
-  color: #fff;
+  color: var(--on-ink);
 }
 
 .btn--primary:hover {
-  background: #000;
+  background: var(--ink-hover);
   transform: translateY(-1px);
   box-shadow: var(--shadow-md);
 }
@@ -327,7 +342,7 @@ button {
 }
 
 .nav.is-scrolled {
-  background: rgba(250, 249, 246, 0.85);
+  background: var(--nav-bg);
   backdrop-filter: saturate(180%) blur(14px);
   -webkit-backdrop-filter: saturate(180%) blur(14px);
   border-bottom-color: var(--line);
@@ -356,7 +371,7 @@ button {
   height: 36px;
   border-radius: 50%;
   background: var(--ink);
-  color: #fff;
+  color: var(--on-ink);
   font-family: var(--font-display);
   font-size: 1.125rem;
   letter-spacing: 0.02em;
@@ -745,7 +760,7 @@ button {
 .filter.is-active {
   background: var(--ink);
   border-color: var(--ink);
-  color: #fff;
+  color: var(--on-ink);
 }
 
 .projects {
@@ -1010,12 +1025,12 @@ button {
    ========================================================================== */
 .contact {
   padding: var(--space-32) 0;
-  background: var(--ink);
-  color: #c9ccd3;
+  background: var(--band-bg);
+  color: var(--band-text);
 }
 
 .contact .eyebrow {
-  color: #e7a27f;
+  color: var(--band-accent);
 }
 
 .contact__grid {
@@ -1030,13 +1045,13 @@ button {
   font-weight: 400;
   font-size: clamp(2.75rem, 6vw, 4.75rem);
   line-height: 1.02;
-  color: #fff;
+  color: var(--band-heading);
   margin-top: var(--space-5);
 }
 
 .contact__title em {
   font-style: italic;
-  color: #e7a27f;
+  color: var(--band-accent);
 }
 
 .contact__text {
@@ -1056,28 +1071,28 @@ button {
   align-items: center;
   gap: var(--space-3);
   font-size: var(--text-md);
-  color: #fff;
+  color: var(--band-heading);
   transition: color 150ms var(--ease);
   overflow-wrap: anywhere;
 }
 
 .contact__links a:hover {
-  color: #e7a27f;
+  color: var(--band-accent);
 }
 
 .contact .btn--primary {
-  background: #fff;
-  color: var(--ink);
+  background: var(--band-btn-bg);
+  color: var(--band-btn-text);
 }
 
 .contact .btn--primary:hover {
-  background: #f1efe9;
+  background: var(--band-btn-hover);
 }
 
 .footer {
-  background: var(--ink);
-  color: #8d929c;
-  border-top: 1px solid #2a2d34;
+  background: var(--band-bg);
+  color: var(--band-muted);
+  border-top: 1px solid var(--band-line);
   padding: var(--space-8) 0;
   font-size: var(--text-sm);
 }
@@ -1090,7 +1105,7 @@ button {
 }
 
 .footer a:hover {
-  color: #fff;
+  color: var(--band-heading);
 }
 
 /* ==========================================================================
@@ -1116,7 +1131,7 @@ button {
 
 .to-top:hover {
   background: var(--ink);
-  color: #fff;
+  color: var(--on-ink);
   transform: translateY(-2px);
 }
 
