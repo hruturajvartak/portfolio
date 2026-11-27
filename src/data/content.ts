@@ -1,12 +1,35 @@
+const img = (file: string) => `${import.meta.env.BASE_URL}images/${file}`
+
 export const profile = {
   name: 'Hruturaj (Raj) Vartak',
   fullName: 'Hruturaj Vartak',
+  shortName: 'Raj Vartak',
   title: 'Mechanical Engineering Leader',
   tagline:
     'Mechanical Engineering Leader — 16+ years leading structural and fluid systems engineering across Zoomlion Heavy Industries, John Deere Harvester Works, CNH Industrial, and AGCO.',
+  summary:
+    '16+ years leading structural and fluid systems engineering for excavators, cranes and harvesters — from first CAD sketch and FEA correlation to durability validation and launch.',
   email: 'hruturaj.vartak@gmail.com',
   linkedin: 'https://www.linkedin.com/in/hruturajvartak/',
+  photo: img('profile.jpg'),
+  focus: 'Structural & fluid systems · Heavy equipment',
 }
+
+export const companies = ['Zoomlion', 'John Deere', 'CNH Industrial', 'AGCO']
+
+export const standards = [
+  'CE Marking (EN 280)',
+  'ANSI',
+  'CSA',
+  'ISO 5006',
+  'ISO 3471',
+  'ISO 3449',
+  'ISO 10262',
+  'ISO 12117-2',
+  'APQP / PPAP',
+]
+
+export type ProjectImage = { src: string; alt: string }
 
 export const stats = [
   { value: '16+', label: 'Years Experience' },
@@ -52,6 +75,7 @@ export const experience = [
 export const projects = [
   {
     title: 'Mini Excavator Frame — Zero Tail-Swing Design',
+    images: [{ src: img('mini-excavator-frame.png'), alt: 'FEA stress and displacement plot for the mini excavator frame, lateral load case' }],
     category: 'Structural Design',
     goal: 'Create a robust, lightweight, highly maneuverable 3.5 mT mini-excavator frame meeting safety and operational standards.',
     contributions: [
@@ -72,6 +96,10 @@ export const projects = [
   },
   {
     title: 'Reduced Tail-Swing Excavator Frame — Design Process',
+    images: [
+      { src: img('reduced-tail-swing-1.jpg'), alt: 'CAD model of the reduced tail-swing excavator frame' },
+      { src: img('reduced-tail-swing-2.png'), alt: 'FEA results for the reduced tail-swing excavator frame' },
+    ],
     category: 'Structural Design',
     goal: 'Design a 15.5 mT reduced tail-swing excavator frame for confined spaces while maintaining strength, stability, and manufacturability.',
     contributions: [
@@ -94,6 +122,7 @@ export const projects = [
   },
   {
     title: 'Excavator Arm Design & Structural Optimization',
+    images: [{ src: img('excavator-arm.jpg'), alt: 'Excavator arm (stick) CAD geometry' }],
     category: 'Structural Design',
     goal: 'Design an excavator arm (stick) with optimal pin geometry and contour for strength and reach.',
     contributions: [
@@ -114,6 +143,10 @@ export const projects = [
   },
   {
     title: 'Ergonomic and Visibility Study of Excavator Cabin',
+    images: [
+      { src: img('cabin-1.jpg'), alt: 'Operator reach-zone ergonomic study inside the excavator cabin' },
+      { src: img('cabin-2.png'), alt: 'ISO 5006 visibility analysis of the excavator cabin' },
+    ],
     category: 'Human-Centered Design',
     goal: 'Improve operator comfort, visibility, and safety per ISO 5006 standards.',
     contributions: [
@@ -133,6 +166,7 @@ export const projects = [
   },
   {
     title: 'Topology Optimization of Excavator Frame',
+    images: [] as ProjectImage[],
     category: 'Structural Optimization',
     goal: 'Reduce frame weight while maintaining durability and safety.',
     contributions: [
@@ -152,6 +186,7 @@ export const projects = [
   },
   {
     title: 'IoT-Enabled Digital Twin for Structural Systems',
+    images: [{ src: img('digital-twin.png'), alt: 'Excavator digital twin IoT architecture: sensors, edge gateway, cloud and dashboard' }],
     category: 'Digital Twin & IoT',
     goal: 'Ensure durability and reliability of heavy structural systems under dynamic loads.',
     contributions: [
@@ -174,12 +209,14 @@ export const projects = [
 export const patents = [
   {
     id: 'US11603643B2',
+    url: 'https://patents.google.com/patent/US11603643B2',
     title: 'Combination Tie Down Lug and Step Riser',
     abstract:
       'A combination tie-down lug and step riser includes a foot support portion, a hold-down loop, and a mounting portion, preferably fabricated from a single piece of material. The foot support portion includes projections extending upward from a top edge. The hold-down loop extends from one end of the footrest portion with a U-shaped opening positioned along a horizontal axis. The mounting portion extends from the opposing end and is attached to an excavator base by welding or other suitable method.',
   },
   {
     id: 'US11886218B2',
+    url: 'https://patents.google.com/patent/US11886218B2',
     title: 'One-Handed Joystick for Cranes',
     abstract:
       'A one-handed joystick for cranes allows an operator to make all necessary motions with a single hand and arm. Includes a rotatable cylinder bar, rotatable ring, industrial joystick base, rocker switch, and push-button switches. Motions control raising and lowering auxiliary and main hoists, luffing, slewing, and telescoping boom extension. A Deadman\u2019s switch may be installed on the back side of the rotatable cylinder bar.',

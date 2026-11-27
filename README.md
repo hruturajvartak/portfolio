@@ -122,6 +122,7 @@ To enable the contact form in production, add `VITE_SUPABASE_URL` and
 │   ├── hooks/              # Scroll / active-section hooks
 │   ├── lib/supabase.ts     # Optional Supabase client
 │   └── styles/global.css
+├── public/images/          # Profile photo and project images
 ├── supabase/migrations/    # contact_messages table
 └── .github/workflows/      # GitHub Pages deploy
 ```
