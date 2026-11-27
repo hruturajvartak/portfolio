@@ -1345,7 +1345,19 @@ button {
   .hero { padding-top: calc(var(--nav-h) + var(--space-10)); }
   .hero__grid { grid-template-columns: 1fr; gap: var(--space-12); }
   .hero__photo { justify-self: start; max-width: 168px; order: -1; }
-  .hero__status { border-radius: var(--radius-md); }
+  /* On phones/tablets: name and summary first, focus line just above the buttons */
+  .hero__copy { display: flex; flex-direction: column; align-items: flex-start; }
+  .hero__status {
+    order: 1;
+    margin-bottom: var(--space-8);
+    padding: 0;
+    background: none;
+    border: none;
+    color: var(--muted);
+    gap: var(--space-3);
+  }
+  .hero__ctas { order: 2; align-self: stretch; }
+  .hero__tagline { margin-bottom: var(--space-6); }
   .hero__photo img { aspect-ratio: 1; border-radius: var(--radius-lg); box-shadow: var(--shadow-md); }
   .hero__photo-card { display: none; }
   .about,
